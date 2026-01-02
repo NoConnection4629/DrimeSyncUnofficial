@@ -1,9 +1,9 @@
 # DrimeSync Unofficial
 
-![Version](https://img.shields.io/badge/version-1.4.0-blue.svg)
+[![Version](https://img.shields.io/badge/version-1.4.0-blue.svg)](https://github.com/NoConnection4629/DrimeSyncUnofficial/releases/latest)
 ![Python](https://img.shields.io/badge/python-3.12-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Android-lightgrey.svg)
-![License](https://img.shields.io/badge/license-Check%20LICENSE-green.svg)
+[![License](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-lightgrey.svg)](LICENSE)
 ![BeeWare](https://img.shields.io/badge/built%20with-BeeWare-purple.svg)
 
 > 🔒 **Client non officiel pour Drime Cloud avec chiffrement End-to-End (E2EE) et Zero Knowladge **
