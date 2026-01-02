@@ -1,0 +1,215 @@
+# This project was generated with 0.3.25 using template: https://github.com/beeware/briefcase-template @ v0.3.25
+[tool.briefcase]
+project_name = "Synchronisation avec Drime (non officiel)"
+bundle = "com.noconnection4629"
+version = "1.4.0"
+url = "https://www.reddit.com/user/No_Connection_4629/"
+license.file = "LICENSE"
+author = "NoConnection4629"
+author_email = "none"
+
+[tool.briefcase.app.drimesyncunofficial]
+formal_name = "DrimeSync_Unofficial"
+description = "Application pour la gestion de la synchronisation avec Drime - Basé sur le cli publique de Drime : https://cli.drime.cloud/drime"
+long_description = "Client non officiel pour la synchronisation de fichiers avec Drime, incluant le chiffrement E2EE et le 2FA."
+icon = "src/drimesyncunofficial/resources/drimesyncunofficial"
+
+sources = [
+    "src/drimesyncunofficial",
+]
+test_sources = [
+    "tests",
+]
+
+requires = [
+#    "toga>=0.4.0",
+    "requests",
+    "urllib3<2.0.0",      
+    "cryptography",
+    "PyNaCl",
+	"pyotp",
+	"qrcode",
+    "Pillow",
+#    "pillow-heif",
+    "pypdf",
+    "reportlab",
+]
+
+test_requires = [
+    "pytest",
+    "pytest-asyncio",
+    "pytest-cov",
+    "hypothesis",
+    "mypy",
+    "types-requests",
+]
+
+[tool.briefcase.app.drimesyncunofficial.macOS]
+universal_build = true
+requires = [
+    "toga-cocoa~=0.5.0",
+    "std-nslog~=1.0.3",
+    "keyring",
+]
+entitlements = { "com.apple.security.network.client" = true }
+
+[tool.briefcase.app.drimesyncunofficial.linux]
+requires = [
+    "keyring",
+#    "pillow-heif",
+]
+
+
+[tool.briefcase.app.drimesyncunofficial.linux.system.debian]
+requires = [
+    "toga-gtk~=0.5.0",
+    "pygobject < 3.52.1",
+]
+
+system_requires = [
+    "libcairo2-dev",
+    "libgirepository1.0-dev",
+]
+
+system_runtime_requires = [
+    "gir1.2-gtk-3.0",
+    "libgirepository-1.0-1",
+    "libcanberra-gtk3-module",
+]
+
+[tool.briefcase.app.drimesyncunofficial.linux.system.rhel]
+requires = [
+    "toga-gtk~=0.5.0",
+    "pygobject < 3.52.1",
+]
+
+system_requires = [
+    "cairo-gobject-devel",
+    "gobject-introspection-devel",
+    "rpm-build",
+    "pkgconf-pkg-config",
+]
+
+system_runtime_requires = [
+    "gobject-introspection",
+    "gtk3",
+    "libcanberra-gtk3",
+]
+
+[tool.briefcase.app.drimesyncunofficial.linux.system.suse]
+system_requires = [
+    "cairo-devel",
+    "gobject-introspection-devel",
+]
+
+system_runtime_requires = [
+    "gtk3",
+    "gobject-introspection", "typelib(Gtk) = 3.0",
+    "libcanberra-gtk3-module",
+]
+
+[tool.briefcase.app.drimesyncunofficial.linux.system.arch]
+system_requires = [
+    "cairo",
+    "gobject-introspection",
+    "gtk3",
+    "libcanberra",
+]
+
+system_runtime_requires = [
+    "gtk3",
+    "gobject-introspection-runtime",
+    "libcanberra",
+]
+
+[tool.briefcase.app.drimesyncunofficial.linux.appimage]
+manylinux = "manylinux_2_28"
+
+system_requires = [
+    "gcc",                      
+    "python3-devel",            
+    "pkgconf-pkg-config",
+    "openssl-devel",
+    "libffi-devel",
+    "cairo-gobject-devel",
+    "gobject-introspection-devel",
+    "gtk3-devel",
+    "libcanberra-gtk3",
+    "PackageKit-gtk3-module",
+    "gvfs-client",
+]
+
+requires = [
+    "toga-gtk==0.3.1",
+    "PyGObject==3.42.2",
+    "travertino==0.3.0",
+    "pillow-heif",
+]
+
+linuxdeploy_plugins = [
+    "DEPLOY_GTK_VERSION=3 gtk",
+]
+
+[tool.briefcase.app.drimesyncunofficial.linux.flatpak]
+flatpak_runtime = "org.gnome.Platform"
+flatpak_runtime_version = "48"
+flatpak_sdk = "org.gnome.Sdk"
+
+[tool.briefcase.app.drimesyncunofficial.windows]
+requires = [
+    "toga-winforms>=0.5.0",
+    "keyring",
+    "pywin32-ctypes",
+]
+
+[tool.briefcase.app.drimesyncunofficial.iOS]
+requires = [
+    "toga-iOS~=0.5.0",
+    "std-nslog~=1.0.3",
+	"requests",
+    "cryptography",
+]
+
+
+[tool.briefcase.app.drimesyncunofficial.android]
+requires = [
+    "toga-android~=0.5.0",
+]
+
+base_theme = "Theme.AppCompat.Light.DarkActionBar"
+
+build_gradle_dependencies = [
+    "androidx.appcompat:appcompat:1.6.1",
+    "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+]
+
+permissions = [
+    "android.permission.INTERNET",
+    "android.permission.ACCESS_NETWORK_STATE",
+    "android.permission.READ_EXTERNAL_STORAGE",
+    "android.permission.WRITE_EXTERNAL_STORAGE",
+    "android.permission.MANAGE_EXTERNAL_STORAGE",
+    "android.permission.WAKE_LOCK",
+    "android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS",
+    "android.permission.READ_MEDIA_IMAGES",
+    "android.permission.READ_MEDIA_VIDEO",
+    "android.permission.READ_MEDIA_AUDIO"
+]
+
+
+[tool.briefcase.app.drimesyncunofficial.web]
+requires = [
+    "toga-web~=0.5.0",
+]
+style_framework = "Shoelace v2.3"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+filterwarnings = [
+    "ignore::RuntimeWarning",
+    "ignore::DeprecationWarning",
+    "ignore::UserWarning"
+]

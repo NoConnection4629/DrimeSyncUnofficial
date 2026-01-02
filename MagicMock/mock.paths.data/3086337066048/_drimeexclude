@@ -1,0 +1,21 @@
+# --- Fichiers Système ---
+Thumbs.db
+desktop.ini
+.DS_Store
+._*
+# --- Fichiers Temporaires ---
+*.tmp
+*.temp
+*.bak
+*.log
+*.swp
+~$*
+# --- Développement ---
+__pycache__/
+.git/
+.svn/
+.idea/
+.vscode/
+node_modules/
+venv/
+.env
