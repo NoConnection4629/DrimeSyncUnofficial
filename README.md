@@ -12,9 +12,9 @@ Un client cross-platform pour Drime Cloud, construit avec Python et BeeWare.
 
 ## 🛡️ Sécurité & Architecture
 <p align="center">
-  <img src="docs/3.3.png" width="30%" title="Schéma Chiffrement E2EE" />
-  <img src="docs/1.1.png" width="30%" title="Capsule" />
-  <img src="docs/2.2.png" width="30%" title="Filigrane" />
+  <img src="docs/3.3.png" width="60%" title="Schéma Chiffrement E2EE" />
+  <img src="docs/1.1.png" width="60%" title="Capsule" />
+  <img src="docs/2.2.png" width="60%" title="Filigrane" />
 </p>
 
 ---
